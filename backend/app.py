@@ -1,14 +1,14 @@
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../frontend")
 
-@app.route('/')
+@app.route("/")
 def index():
-    return "ЗАЙДИ НА /hello/<твое имя>"
+    return "Зайди на сервер /hello/имя"
 
 @app.route("/hello/<name>")
 def hello(name):
-    return f"<h1>Привет, {name}!</h1>"
+    return render_template('index.html',name=name)
 
-if __name__ == "__main__":
-    app.run(host = '0.0.0.0', port=5000) 
+if __name__ = "__main__":
+    app.run(host="0.0.0.0",port=5000)

@@ -21,4 +21,5 @@ jobs:
           script: |
             cd /var/www/bd
             git pull origin main
+            docker compose up -d --build
             echo "Deployed at $(date)"
